@@ -1,0 +1,96 @@
+<section style="height:100%;">
+    <!-- <div>
+
+        <mat-toolbar class="pad" color="primary">
+            <h3>Tuto</h3>
+        </mat-toolbar>
+        <div class="flex"style="flex-direction: column;height: calc(100% - 5em);">
+            <DIV class="pad curvCor mat-card" style="padding: 2em;">
+                <h1 style="text-align: center;">Sign In</h1>
+                <form [formGroup]="kil" class="flex" style="flex-direction: column;" (ngSubmit)="login()">
+                    <mat-form-field>
+                        <mat-label>email</mat-label>
+                        <input matInput type="text" formControlName="email">
+                    </mat-form-field>
+                    <mat-form-field>
+                        <mat-label>password</mat-label>
+                        <input matInput type="text" formControlName="pwd">
+                    </mat-form-field>
+                    <button style="width:100%" mat-raised-button color="primary">Sign In</button>
+                    <h3 >Or</h3>
+                    <hr>
+    
+                </form>
+                <a routerLink="../signup">
+    
+                    <button style="width:100%" mat-stroked-button color="accent">Sign Up</button>
+                </a>
+                    
+            </DIV> 
+        </div>
+    </div> -->
+    <div class="flex scrl">
+        <div class="flex">
+            <div style="width: 100%; height:inherit;">
+
+                <img class="img" src="./gjj.png" alt="">
+
+            </div>
+        </div>
+                <div class="flex pad">
+            <div style="width: 100%; height:inherit;">
+
+                <img class="img" src="./assa.png" alt="">
+            </div>
+        </div>
+
+        <div class="flex pad">
+            <div style="width: 100%; height:inherit;">
+                <img class="img" src="./kjk.png" alt="">
+
+            </div>
+
+        </div>
+        <div style="background-image: url(./toyoBG.png);">
+            <div class="bg" style="width: 100vw;
+            height: 100vh;
+            background-image: url(./toyoBG.png);">
+
+                <!-- <mat-toolbar class="pad" color="primary">
+                    <h3>Toyo</h3>
+                </mat-toolbar> -->
+                <div class="flex" style="flex-direction: column;height: calc(100% - 5em);">
+                    <DIV class="pad curvCor" style="padding: 2em;">
+                        <h1 style="text-align: center;">Sign In</h1>
+                        <form [formGroup]="kil" class="flex" style="flex-direction: column;" (ngSubmit)="login()">
+                            <mat-form-field appearance="outline">
+                                <mat-label>email</mat-label>
+                                <input matInput type="text" formControlName="email">
+                            </mat-form-field>
+                            <mat-form-field appearance="outline">
+                                <mat-label>password</mat-label>
+                                <input matInput type="password" formControlName="pwd">
+                            </mat-form-field>
+                            <button style="width:100%" mat-raised-button color="primary">Sign In</button>
+                            <h3>Or</h3>
+                            <hr>
+
+                        </form>
+                        <a routerLink="../signup">
+
+                            <button style="width:100%" mat-stroked-button color="accent">Get Started</button>
+                        </a>
+
+                    </DIV>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="loader-cont flex" style="background-color: rgba(0, 0, 0, 0.897);" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <!-- <img  src="../../assets/img/loader.gif" alt=""> -->
+        <img  src="./loader.gif" alt="">
+    </div>
+</section>

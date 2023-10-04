@@ -1,0 +1,85 @@
+
+.panelAnime{
+    animation: panel .2s ease   forwards;
+}
+.panelAnimeDwn{
+    animation: panelDwn .2s ease  forwards;
+
+}
+.bgr{
+    background-color: cadetblue;
+}
+.bgws{
+    background-color: saddlebrown;
+}
+@keyframes panel {
+    0%{
+
+        opacity:.1 ;
+    }    
+        10%{
+            transform: translateY(100Vh);
+        }
+    
+    50%{
+        opacity:.4 ;
+
+    }
+    
+    100%{
+        opacity: 1;
+        
+        transform: translateY(0);
+    }
+}
+@keyframes panelDwn {
+    0%{
+
+        opacity:.1 ;
+    }    
+        10%{
+            transform: translateY(-100Vh);
+        }
+    
+    50%{
+        opacity:.4 ;
+
+    }
+    
+    100%{
+        opacity: 1;
+        
+        transform: translateY(0);
+    }
+}
+#slider{
+    opacity: 0;
+    position:relative;
+    z-index:-1;
+}
+.bookTitle{
+    position: absolute;
+    bottom: 10px;
+    color: white;
+}
+.titleBlind{
+    position: relative;
+    width: inherit;height: inherit;background: linear-gradient(180deg,transparent,transparent,black );
+}
+.bookInfo{
+    place-content: space-between;
+    border: 1px solid #0000003b;
+    margin: 1em;
+}
+.mat-flat-button{
+    line-height: 1;
+    padding: .7em;
+
+}
+
+.mat-chip{
+    min-width: 7em;
+    background-color: #673ab72b;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}

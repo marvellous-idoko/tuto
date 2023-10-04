@@ -1,0 +1,36 @@
+<section class="pad flex" style="height:100%;">
+    <div class="flex">
+        <form [formGroup]="kil">
+            <h1>Zeeta Airtime</h1>
+            <div>
+                <!-- <mat-form-field>
+                    <mat-label>Vendor</mat-label>
+                    <mat-select formControlName="vendor">
+                        <mat-option>IKEDC</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br> -->
+                <mat-form-field>
+                    <mat-label>Phone No.</mat-label>
+                    <input (blur)="verifyInfo()" maxlength="11" minlength="11" formControlName="PhNo" matInput type="tel">
+                    <!-- <mat-error *ngIf="kil.get('PhNo')?.getError('invalid')">
+                        Phone is <strong>invalid</strong>
+                    </mat-error>                -->
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Amount</mat-label>
+                    <input formControlName="amount" type="number" matInput>
+                </mat-form-field>
+                <br>
+
+                <button mat-raised-button (click)="collectInfo()"  color="primary" style="width: 100%;" class="curvCor">Pay</button>
+            </div>
+        </form>
+    </div>
+</section>
+<section class="loader-cont flex" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <img src="../../assets/loader.gif" alt="">
+    </div>
+  </section>

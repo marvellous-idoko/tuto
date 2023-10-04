@@ -1,0 +1,101 @@
+<mat-toolbar class="flex pad" style="place-content: baseline;z-index: 2;" color="primary">
+  <button mat-icon-button style="margin-right: 10px;" (click)="movback()"> 
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+      class="w-5 h-5">
+      <path fill-rule="evenodd"
+        d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+        clip-rule="evenodd" />
+    </svg>
+  </button>
+  <header>Genres </header>
+</mat-toolbar>
+<div class="md-content" (swipeleft)="swipe(idx, $event.type)" (swiperight)="swipe(idx, $event.type)" style="height: 50vh;
+position:fixed;
+width:100vw;
+z-index: 2;">
+</div>
+<mat-tab-group mat-stretch-tabs [(selectedIndex)]="selectedIndex" (selectedIndexChange)="selectChange()">
+  <ng-container *ngFor="let tab of tabs" (touchstart)="swipe(tab.id, $event.type)"
+    (touchend)="swipe(tab.id, $event.type)" (swipeleft)="swipe(tab.id, $event.type)"
+    (swiperight)="swipe(tab.id, $event.type)">
+    <mat-tab [label]="''+tab.lbl" (swipeleft)="swipe(tab.id, $event.type)" (swiperight)="swipe(tab.id, $event.type)">
+      <div class="flex" style="flex-direction: column;min-height: 80vh;">
+        <mat-card style="margin-top: 2em;position: relative;z-index: 0;" (click)="goto(i['bookId'])"
+          *ngFor="let i of arr[tab.lbl]">
+          <img src="{{i['bookArtSm']}}" mat-card-image>
+          <!-- <a routerLink="../aboutBook/{{i['bookId']}}" style="position: relative;z-index: 0;">  -->
+          <h4 (click)="goto(i['bookId'])" mat-card-title>{{i['title']}}</h4>
+          <p mat-card-subtitle>{{i['authorNm']}}</p>
+          <!-- </a> -->
+        </mat-card>
+        <!-- <h1  *ngIf="arr[tab.lbl].length === 0">
+            No Books for this genre
+        </h1> -->
+        <!-- <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>
+        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card>        <mat-card>
+          <h1 mat-card-title>mlmlmlm</h1>
+          <h3 mat-card-subtitle>lmlmlm</h3>
+        </mat-card> -->
+      </div>
+    </mat-tab>
+  </ng-container>
+
+
+</mat-tab-group>

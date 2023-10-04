@@ -1,0 +1,170 @@
+<section>
+    <div>
+        <div class="bg-primary" style="height:20em;position:relative;top: -2px;color: white;border-bottom-left-radius: 50%;
+        border-bottom-right-radius: 50%;">
+
+            <button (click)="movback()" mat-icon-button>
+                <mat-icon>
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd"
+                            d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                            clip-rule="evenodd" />
+                    </svg>
+                </mat-icon>
+            </button>
+            <div class="flex">
+                <h1>Hi,</h1>
+                <h1 class="wrdBrk" style="width: 70%;">{{user['name']}}</h1>
+                <!-- <h1>{{user['name']}}'</h1> -->
+                <figure class="avatar-cont flex" style="position: absolute;bottom: -50px;"><img class="avatar" style="height:8em;width:8em;" src="./logo.jpg" alt="">
+                </figure>
+            </div>
+        </div>
+        <div style="    margin: 2em 0;" class="pad">
+            <mat-list>
+                <mat-list-item>
+
+                    <div class="flex">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path
+                                        d="M3 4a2 2 0 00-2 2v1.161l8.441 4.221a1.25 1.25 0 001.118 0L19 7.162V6a2 2 0 00-2-2H3z" />
+                                    <path
+                                        d="M19 8.839l-7.77 3.885a2.75 2.75 0 01-2.46 0L1 8.839V14a2 2 0 002 2h14a2 2 0 002-2V8.839z" />
+                                </svg>
+
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>{{user['email']}}</h4>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <hr>
+                <mat-list-item>
+
+                    <div class="flex">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path fill-rule="evenodd"
+                                        d="M2 3.5A1.5 1.5 0 013.5 2h1.148a1.5 1.5 0 011.465 1.175l.716 3.223a1.5 1.5 0 01-1.052 1.767l-.933.267c-.41.117-.643.555-.48.95a11.542 11.542 0 006.254 6.254c.395.163.833-.07.95-.48l.267-.933a1.5 1.5 0 011.767-1.052l3.223.716A1.5 1.5 0 0118 15.352V16.5a1.5 1.5 0 01-1.5 1.5H15c-1.149 0-2.263-.15-3.326-.43A13.022 13.022 0 012.43 8.326 13.019 13.019 0 012 5V3.5z"
+                                        clip-rule="evenodd" />
+                                </svg>
+
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>{{user['contact']}}</h4>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <hr>
+                <mat-list-item>
+                    <div class="flex" style="width: 100%;">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path fill-rule="evenodd"
+                                        d="M10 1c3.866 0 7 1.79 7 4s-3.134 4-7 4-7-1.79-7-4 3.134-4 7-4zm5.694 8.13c.464-.264.91-.583 1.306-.952V10c0 2.21-3.134 4-7 4s-7-1.79-7-4V8.178c.396.37.842.688 1.306.953C5.838 10.006 7.854 10.5 10 10.5s4.162-.494 5.694-1.37zM3 13.179V15c0 2.21 3.134 4 7 4s7-1.79 7-4v-1.822c-.396.37-.842.688-1.306.953-1.532.875-3.548 1.369-5.694 1.369s-4.162-.494-5.694-1.37A7.009 7.009 0 013 13.179z"
+                                        clip-rule="evenodd" />
+                                </svg>
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>{{user['coins']}}</h4>
+                        </div>
+                        <div style="flex:1;">
+                            <button (click)="goto('coinshp')"style="float:right;" color="primary" mat-stroked-button>Go to Coin shop</button>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <hr>
+                <!-- <mat-list-item>
+                    <div class="flex">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path
+                                        d="M2 4.5A2.5 2.5 0 014.5 2h11a2.5 2.5 0 010 5h-11A2.5 2.5 0 012 4.5zM2.75 9.083a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H2.75zM2.75 12.663a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H2.75zM2.75 16.25a.75.75 0 000 1.5h14.5a.75.75 0 100-1.5H2.75z" />
+                                </svg>
+
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>My Library 2</h4>
+                        </div>
+                    </div>
+                </mat-list-item> -->
+                <!-- <hr> -->
+                <mat-list-item>
+                    <div class="flex" (click)="goto('trxHist')">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"
+                                    class="w-5 h-5">
+                                    <path
+                                        d="M2 4.5A2.5 2.5 0 014.5 2h11a2.5 2.5 0 010 5h-11A2.5 2.5 0 012 4.5zM2.75 9.083a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H2.75zM2.75 12.663a.75.75 0 000 1.5h14.5a.75.75 0 000-1.5H2.75zM2.75 16.25a.75.75 0 000 1.5h14.5a.75.75 0 100-1.5H2.75z" />
+                                </svg>
+
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>Transactions</h4>
+                        </div>
+                    </div>
+                </mat-list-item>
+                
+                <hr>
+                <mat-list-item>
+                    <div class="flex">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                                    <path fill-rule="evenodd" d="M7.455 2.004a.75.75 0 01.26.77 7 7 0 009.958 7.967.75.75 0 011.067.853A8.5 8.5 0 116.647 1.921a.75.75 0 01.808.083z" clip-rule="evenodd" />
+                                  </svg>
+                                  
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>
+                            </h4>
+                            <button mat-stroked-button color="accent" (click)="addGenres()">
+                                Lights Out
+                            </button>
+                        </div>
+                    </div>
+                </mat-list-item>
+                <hr>
+                <mat-list-item>
+                    <div class="flex" (click)="logout()">
+                        <div style="width: 2.5em; color: var(--primary);" class="flex">
+                            <mat-icon>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                                  </svg>
+                                  
+
+                            </mat-icon>
+                        </div>
+                        <div>
+                            <h4>log out</h4>
+                        </div>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+        </div>
+    </div>
+    <h3 style="text-align: center;">Your Genres</h3>
+    <mat-chip-list class="flex" color="accent" aria-label="genres">
+        <mat-chip class="flex" *ngFor="let genre of user['genres']"> {{genre}}</mat-chip>
+    </mat-chip-list>
+    <div style="padding:1em 5em;">
+        <button mat-raised-button style="width: 100%;" color="primary">Edit Profile</button>
+    </div>
+</section>

@@ -1,0 +1,322 @@
+<section style="    margin-bottom: 10vh;">
+    <div>
+        <div *ngIf="s.eng['bksForU'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Books For You</h2>
+            <hr>
+            <div class="flex scrl">
+
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksForU'] ">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class="wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                    <!-- {{book['id']}} -->
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+                            </article>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <a routerLink="../../bksForU">
+
+                    <div class="sm-box flex curvCor flex pad">
+                        <div style="color: white;" class="VMBlind flex curvCor">
+                            <h3>View More +</h3>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        <div *ngIf="s.eng['freeBooks'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Free Books</h2>
+            <hr>
+            <div class="flex scrl">
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['freeBooks'] ">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class=" wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                    <!-- {{book['id']}} -->
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+
+                                <!-- <p>Price: <h2>{{500 | currency:'NGN '}}</h2></p> -->
+                            </article>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <!-- <a routerLink="../../trending">
+                    <div class="sm-box curvCor flex pad">
+                        <div style="color: white;" class="VMBlind flex curvCor">
+                            <h3>View More +</h3>
+                        </div>
+                    </div>
+                </a> -->
+
+            </div>
+        </div>
+        <div *ngIf="s.eng['bksTrnd'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Trending</h2>
+            <hr>
+            <div class="flex scrl">
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksTrnd'] ">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class=" wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                    <!-- {{book['id']}} -->
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+
+                                <!-- <p>Price: <h2>{{500 | currency:'NGN '}}</h2></p> -->
+                            </article>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <a routerLink="../../trending">
+                    <div class="sm-box curvCor flex pad">
+                        <div style="color: white;" class="VMBlind flex curvCor">
+                            <h3>View More +</h3>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+        
+        <div *ngIf="s.eng['bksPop'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Popular</h2>
+            <hr>
+            <div class="flex scrl">
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksPop']">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class=" wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                    <!-- {{book['id']}} -->
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+
+                                <!-- <p>Price: <h2>{{500 | currency:'NGN '}}</h2></p> -->
+                            </article>
+
+                        </figcaption>
+                    </figure>
+                </div>
+                <a routerLink="../../popular">
+                    <div class="sm-box curvCor flex pad">
+                        <div style="color: white;" class="VMBlind flex curvCor">
+                            <h3>View More +</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="s.eng['favAut'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Favourite Authors</h2>
+            <hr>
+            <div class="flex scrl">
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['favAut']">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class=" wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                    <!-- {{book['id']}} -->
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+
+                                <!-- <p>Price: <h2>{{500 | currency:'NGN '}}</h2></p> -->
+                            </article>
+
+                        </figcaption>
+                    </figure>
+                </div>
+                <a routerLink="../../favAuthor">
+
+                    <div class="sm-box flex curvCor flex pad">
+                        <div style="color: white;" class="VMBlind flex curvCor">
+                            <h3>View More +</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div *ngIf="s.eng['bksMstRtd'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Most Rated</h2>
+            <hr>
+            <div class="flex scrl">
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksMstRtd']">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class=" wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+
+                            </article>
+
+                        </figcaption>
+                    </figure>
+                </div>
+                <a routerLink="../../mstRtd">
+
+                    <div class="sm-box flex curvCor flex pad">
+                        <div style="color: white;" class="VMBlind flex curvCor">
+                            <h3>View More +</h3>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+
+        <div *ngIf="s.eng['bksCrtRdng'].length !== 0" style="margin-bottom: 2em;">
+            <h2>Currently Reading</h2>
+            <hr>
+            <div class="flex scrl">
+                <div class="sm-box flex curvCor" (click)="goto(book['bookId'])"
+                    *ngFor="let book of s.eng['bksCrtRdng']">
+                    <figure class="flex" style="flex-direction:column;">
+                        <img class="bookImg curvCor" src="{{book['bookArtSm']}}" alt="TOYO Free Books">
+                        <figcaption>
+                            <div style="width: 120px;">
+                                <h6 class=" wrdBrk"><span>{{book['title']}}</span></h6>
+                            </div>
+                            <article class="flex" style="place-content: space-between;">
+                                <h4 class="wrdBrk" style="width:5em;color:var(--primary)">
+                                    {{ book['authorNm']}}
+                                </h4>
+                                <h4 class="flex">{{book['noOfStars']}}
+                                    <mat-icon class="flex" style="display:flex;place-items:baseline;">
+                                        <svg style="color: var(--accent);
+                                        margin-bottom: -4px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+                                            fill="currentColor" class="w-5 h-5">
+                                            <path fill-rule="evenodd"
+                                                d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </mat-icon>
+                                </h4>
+                            </article>
+
+                        </figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="loader-cont flex" style="background-color: rgba(0, 0, 0, 0.897);" *ngIf="loader">
+    <div class="loader-wrapper flex">
+        <!-- <img  src="../../assets/img/loader.gif" alt=""> -->
+        <img src="./loader.gif" alt="">
+    </div>
+</section>

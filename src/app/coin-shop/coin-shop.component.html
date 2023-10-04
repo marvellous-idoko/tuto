@@ -1,0 +1,97 @@
+<section  style="height: 100vh;">
+    <mat-toolbar color="primary" >
+        <nav class="flex">            
+            <button (click)="movback()" mat-icon-button>
+            <mat-icon class="pad">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd"
+                        d="M12.79 5.23a.75.75 0 01-.02 1.06L8.832 10l3.938 3.71a.75.75 0 11-1.04 1.08l-4.5-4.25a.75.75 0 010-1.08l4.5-4.25a.75.75 0 011.06.02z"
+                        clip-rule="evenodd" />
+                </svg>
+            </mat-icon>
+        </button>
+        <mat-card-header>Coin Shop</mat-card-header>
+    </nav>
+    </mat-toolbar>
+    <div class="flex"class="flex" style="flex-direction: column; height:70vh; width: 93vw;">
+        <h1 style="text-align: center;">Get Coins</h1>
+        <div style="width: inherit;">
+            <ul style="width: inherit;" class="pad">
+                <li>
+                    <div class="flex">
+                        <div>
+                            <img src="./bj.png" height="45" width="45" alt="">
+                        </div>
+                        <div class="flex" style="flex:1; place-content: baseline;"><div style="display: inline-block;margin-right: 1em; width: 70px;"><h3>30</h3><i></i></div><span style="font-weight: bold;color: var(--primary);">{{1500 | currency:"NGN"}}</span></div>
+                        <div>
+                            <button (click)="fg('a')" mat-stroked-button color="primary" angular4-paystack [amount]="150000" ref ="{{ref}}" email="{{s.user['email']}}" 
+                                (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event,ref,'1500')">
+                                Purchase
+                            </button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex"><div>
+                        <img src="./bj.png" height="45" width="45" alt="">
+                    </div>
+                    <div class="flex" style="flex:1; place-content: baseline;"><div style="display: inline-block;margin-right: 1em; width: 70px;"><h3>92</h3><i>bonus 12</i></div>
+                    <span style="font-weight: bold;color: var(--primary);">{{4000 | currency:"NGN"}}</span></div>
+                    <div>
+                        <button mat-stroked-button (click)="fg('b')" color="primary" angular4-paystack [amount]="400000" ref ="{{ref}}" email="{{s.user['email']}}" 
+                        (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event,ref,'4000')">
+                        Purchase
+                    </button>
+                </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex"><div>
+                        <img src="./bj.png" height="45" width="45" alt="">
+
+                    </div>
+                    <div class="flex" style="flex:1; place-content: baseline;"><div style="display: inline-block;margin-right: 1em; width: 70px;"><h3>180</h3><i>bonus 60</i></div>
+                    <span style="font-weight: bold;color: var(--primary);">{{6000 | currency:"NGN"}}</span></div>
+                    <div>
+                        <button mat-stroked-button color="primary" (click)="fg('c')" angular4-paystack [amount]="600000" ref ="{{ref}}" email="{{s.user['email']}}" 
+                        (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event,ref,'6000')">
+                        Purchase
+                    </button>
+                </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex">
+                        <div>
+                            <img src="./bj.png" height="45" width="45" alt="">
+                    </div>
+                    <div class="flex" style="flex:1; place-content: baseline;"><div style="display: inline-block;margin-right: 1em; width: 70px;"><h3>286</h3><i>bonus 66</i></div>
+                    <span style="font-weight: bold;color: var(--primary);">{{11000 | currency:"NGN"}}</span></div>
+                    <div>
+                        <button (click)="fg('d')" mat-stroked-button color="primary" angular4-paystack [amount]="1100000" ref ="{{ref}}" email="{{s.user['email']}}" 
+                        (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event,ref,'11000')">
+                        Purchase
+                    </button>
+                </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="flex">
+                        <div>
+                            <img src="./bj.png" height="45" width="45" alt="">
+
+                        </div>
+                        <div class="flex" style="flex:1; place-content: baseline;"><div style="display: inline-block;margin-right: 1em; width: 70px;"><h3>551</h3><i>bonus 171</i></div>
+                        <span style="font-weight: bold;color: var(--primary);">{{19000 | currency:"NGN"}}</span></div>
+                        <div>
+                            <button mat-stroked-button (click)="fg('e')" color="primary" angular4-paystack [amount]="1900000" ref ="{{ref}}" email="{{s.user['email']}}" 
+                            (paymentInit)="paymentInit()" (onClose)="paymentCancel()" (callback)="paymentDone($event,ref,'19000')">
+                            Purchase
+                        </button>
+                    </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

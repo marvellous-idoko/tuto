@@ -1,0 +1,30 @@
+div.scrl{
+    place-content: start;
+     overflow: auto;
+    white-space: nowrap;
+    height: inherit;
+  }
+  img.img{
+    height: inherit;
+    width: 90vw;
+    /* max-width: 100%;
+    max-height: 100%; */
+    display: inline-block;
+    margin: 0 auto;
+    vertical-align: middle;
+  }
+
+  div.scrl > div{
+   height: inherit;
+   width:90vw; 
+   background-color: white;
+  }
+  .scrl::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrl::-webkit-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

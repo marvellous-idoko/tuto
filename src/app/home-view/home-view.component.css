@@ -1,0 +1,18 @@
+.bookImg{
+    height: 11em;
+    width:8em;
+}
+div.scrl{
+  place-content: start;
+   overflow: auto;
+  white-space: nowrap;
+}
+.scrl::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrl::-webkit-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }

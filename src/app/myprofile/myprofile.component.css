@@ -1,0 +1,7 @@
+
+.mat-chip{
+    min-width: 7em;
+    background-color: #673ab72b;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}

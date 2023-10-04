@@ -1,0 +1,25 @@
+section{
+    height:100%;
+    /* background-image: url(https://firebasestorage.googleapis.com/v0/b/max-75153.appspot.com/o/tutoBooksJSON%2FtoyoBG.png?alt=media&token=72bd1086-9b10-436d-86d4-5ff71d4be61d);position: fixed;top:0;bottom:0;left:0;right:0; */
+}
+.lki{
+    display: block!important;
+    
+}
+.lx{
+    display: none;
+
+}
+#el{
+    transition: .25s;
+    display: none;
+}
+.btn{
+    padding: 5px 10px;
+    color: var(--primary);
+    background-color: #673ab778;
+    border-radius: 5px;
+}
+#sign{
+    color: var(--primary);
+}

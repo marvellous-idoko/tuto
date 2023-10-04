@@ -1,0 +1,41 @@
+.mat-tab-group{
+    position: relative!important;
+    /* z-index: -1!important; */
+    /* top: -50vh; */
+}
+mat-card:nth-of-type(even)>img{
+    animation: bgAnime 5s ease infinite;
+}
+
+mat-card:nth-of-type(odd)>img{
+
+    animation: bgAnimeOdd 5s ease infinite;
+} 
+mat-card>img{
+    height: 450px;
+    width: 320px;
+}
+@keyframes bgAnimeOdd {
+    0%{
+        background-color: var(--primary); 
+    }
+    50%{
+        background-color:red;
+    }
+    100%{
+        background-color: var(--primary); 
+
+    }
+}
+@keyframes bgAnime {
+    0%{
+        background-color: red; 
+    }
+    50%{
+        background-color: var(--primary);
+    }
+    100%{
+        background-color: red; 
+
+    }
+}

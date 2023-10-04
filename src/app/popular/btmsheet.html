@@ -1,0 +1,49 @@
+<div>
+
+    <h3  style="text-align: center;">Book Review</h3>
+    <hr>
+    <p  class="curvCor" id="ld">{{this.s.crrtBook['aboutBook']}}</p>
+    <h3 style="text-align: center;">Genres</h3>
+    <mat-chip-list class="flex" color="accent" aria-label="genres">
+        <mat-chip class="flex" *ngFor="let genre of this.s.crrtBook['genres']"> {{genre}}</mat-chip>
+    </mat-chip-list>
+    
+    <div *ngIf="ys.length === 0">
+        <h5>
+            No comments yet,
+        </h5>
+        <p>
+            you can read the book and make comments
+        </p>
+    </div>
+    <div *ngIf=" ys.length !== 0">
+        <h3 style="text-align: center;">Comments</h3>
+        <ul>
+            <li *ngFor="let y of ys">
+                <div class="flex">
+                    <div style=" margin-right: 10px;">
+                        <img src="./logo.jpg" alt="" class="avatar">
+                    </div>
+                    <div style="flex:1;">
+                        <p style="font-weight: bold;">{{y['name']}}</p>
+                        <p>{{y['value']}}</p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+</div>
+<div>
+    <div >
+
+        <form class="flex" [formGroup]="cmt" (ngSubmit)="cmnt()">
+            <mat-form-field appearance="outline">
+                <mat-label>Add your bit . . .</mat-label>
+                <input type="text" matInput  formControlName="cmmt">
+                <!-- <textarea formControlName="cmmt" name="cmmt" id="cmmt" cols="30" rows="5"></textarea> -->
+            </mat-form-field>
+            <button mat-stroked-button color="primary">submit</button>
+        </form>
+    </div>
+</div>

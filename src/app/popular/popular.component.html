@@ -1,0 +1,50 @@
+<section style="height: 100%;">
+    <div style="height: inherit;">
+        <h3 *ngIf="liner" style="text-align: center;">swipe up or down to view more </h3>
+
+        <div style="height: inherit;">
+           <div class="flex" style="height:inherit;" (swipeDown)="swipeDwn($event)"(swipeUp)="swipeUpp($event)">
+            <div style="width: 100vw;">
+            
+            <div style="position: relative;">
+                <div class="flex pad" style="    position: absolute;
+                width: -webkit-fill-available;
+                padding: 1em 1.5em;place-content: space-between;" >
+                <a><button  (click)="mov()"style="background-color: white;
+                border-radius: 20px; " mat-flat-button>Read now</button></a>
+                 <button mat-icon-button (click)="openBottomSheet()" style="border-radius: 20px;">
+                    <mat-icon style="color: white;">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                        <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a.75.75 0 000 1.5h.253a.25.25 0 01.244.304l-.459 2.066A1.75 1.75 0 0010.747 15H11a.75.75 0 000-1.5h-.253a.25.25 0 01-.244-.304l.459-2.066A1.75 1.75 0 009.253 9H9z" clip-rule="evenodd" />
+                      </svg>
+                      </mat-icon>
+                </button>
+            </div>
+                </div>
+            <div id="slider">
+                <figure>
+                    <div class="img-box bg bigCurv" id="bookArt" [ngStyle]="{'background-image':tr }" >
+                        <div class="titleBlind bigCurv ">
+                            <h1 class="bookTitle pad content">{{currCont['title']}}</h1>
+                        </div>
+                    </div>
+                    <figcaption class="flex bookInfo pad curvCor " style="place-content: space-between;">
+                        <div class="flex" style="place-content: start;">
+
+                            <div class="avatar-cont flex">
+                                <img src="{{autr}}" id="authorArt" class="avatar" alt="">
+                            </div>
+                            <div class="content">
+                                <p>{{currCont['authorNm']}}</p>
+                            </div>
+                        </div>
+                        <div><span>No. of Reads</span><h3 style="color: var(--primary);">{{currCont['noOfReads']}}</h3></div>
+                    </figcaption>
+                    <!-- <button  (tap)="onTap($event)"mat-fab>I</button> -->
+                </figure>
+            </div>
+        </div>
+        </div>
+        </div>
+    </div>
+</section>

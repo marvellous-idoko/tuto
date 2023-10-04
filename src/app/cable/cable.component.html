@@ -1,0 +1,30 @@
+<section class="pad flex" style="height:100%;">
+    <div class="flex">
+        <form [formGroup]="kil">
+            <h1>Zeeta Cable TV</h1>
+            <div>
+                <mat-form-field>
+                    <mat-label>Select Cable TV</mat-label>
+                    <mat-select formControlName="vendor">
+                        <mat-option>GOTV</mat-option>
+                        <mat-option>STARTIMES</mat-option>
+                        <mat-option>DSTV</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Smart Card no.</mat-label>
+                    <input formControlName="SmrtCrdNo" matInput type="text">
+                </mat-form-field>
+                <br>
+                <mat-form-field>
+                    <mat-label>Amount</mat-label>
+                    <input formControlName="amount" type="text" matInput>
+                </mat-form-field>
+                <br>
+
+                <button mat-button color="primary" style="width: 100%;" class="curvCor">Pay</button>
+            </div>
+        </form>
+    </div>
+</section>

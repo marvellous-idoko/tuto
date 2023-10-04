@@ -1,0 +1,28 @@
+
+.mat-chip{
+    min-width: 7em;
+    background-color: #673ab72b;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+}
+li{
+    margin: 5px 0;
+}
+#infoBtn{
+    width: fit-content;
+    color: white;
+    padding: 0 10px;
+    height: fit-content;
+    border: 1px white solid;
+    border-radius: 10px;
+}
+#ld{
+    max-height: 20vh;overflow: auto;padding: 5px;
+    border: #673ab72b solid 1px;
+}
+.titleBlind{
+    height: inherit;
+    background-image: linear-gradient(180deg, transparent,transparent, black);
+    place-items: end;
+    place-content: baseline;
+}

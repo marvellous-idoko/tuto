@@ -6,8 +6,25 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body>
-  <app-root></app-root>
+<body class="mat-typography">
+  <app-root>
+    <div class="flex" style="flex-direction: column; height: 100vh;width: 100vw; background-image: linear-gradient(45deg, var(--primary), #ed1);">
+      <h1 style="color:white; font-weight:bolder;font-family: cursive;">TOYO</h1>
+      <i style="color:white; font-weight:bolder;font-family: cursive;">Books</i>
+    </div>
+  </app-root>
+  <script>
+      let user = JSON.parse(localStorage.getItem('tutoUser'))
+    if(user['black'] == true){
+      document.body.style.backgroundColor = 'black'
+      document.body.style.color = 'white'
+    }
+    document.getElementById('btn').click()
+  </script>
+  
 </body>
 </html>
