@@ -34,7 +34,6 @@ export class ZeetaService {
         this.d.body.style.backgroundColor = 'black'
         this.d.body.style.color = 'white'
     }else{
-      console.log(this.user)
         this.d.body.style.backgroundColor = 'white'
         this.d.body.style.color = 'black'
     }
@@ -91,8 +90,11 @@ export class ZeetaService {
     return this.Http.post(this.server + 'auth/register',data, { headers: this.headers }) 
   }
   login(data:{}){
-    console.log(data)
     return this.Http.post(this.server + 'auth/login',data, { headers: this.headers }) 
+  }
+  sendNotifTokenToServer(){
+    this.Http.get(this.server + `notifToken?id=${this.user['account_no']}&token=${this.user['notificationToken']}`, { headers: this.headers })
+    .subscribe(r=>console.log(r))
   }
 
 }

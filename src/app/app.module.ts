@@ -1,4 +1,4 @@
-import { NgModule,Injectable,CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, Injectable, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
@@ -13,11 +13,11 @@ import { DataComponent } from './data/data.component';
 import { EnergyComponent } from './energy/energy.component';
 import { CableComponent } from './cable/cable.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule,ReactiveFormsModule  } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
-import {MatBottomSheet, MatBottomSheetRef} from '@angular/material/bottom-sheet';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatIconModule } from '@angular/material/icon';
 import { MatToolbarModule } from '@angular/material/toolbar';
@@ -31,10 +31,10 @@ import { TrendingComponent } from './trending/trending.component';
 import { GenresComponent } from './genres/genres.component';
 import { FavAuthorComponent } from './fav-author/fav-author.component';
 import { CrntReadingComponent } from './crnt-reading/crnt-reading.component';
-import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
-import {MatSidenavModule} from '@angular/material/sidenav';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatSidenavModule } from '@angular/material/sidenav';
 // @ts-ignore
-import {MatChipsModule,MatChip} from '@angular/material/chips';
+import { MatChipsModule, MatChip } from '@angular/material/chips';
 // @ts-ignore
 
 import { Angular4PaystackModule } from 'angular4-paystack';
@@ -44,8 +44,9 @@ import * as Hammer from 'hammerjs';
 // const Hammer = require('hammerjs');
 
 import {
-HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG} 
-from '@angular/platform-browser';
+  HammerModule, HammerGestureConfig, HAMMER_GESTURE_CONFIG
+}
+  from '@angular/platform-browser';
 import { btmSheetq } from './fav-author/btmsheet';
 import { btmSheetw } from './mst-rtd/btmsheet';
 import { btmSheete } from './bksforyou/btmsheet';
@@ -65,12 +66,14 @@ import { CoinShopComponent } from './coin-shop/coin-shop.component';
 import { MstRtdComponent } from './mst-rtd/mst-rtd.component';
 import { btmSheeto } from './trending/btmsheet';
 import { TrxHistComponent } from './trx-hist/trx-hist.component';
+import { GoogleLoginProvider,  SocialAuthServiceConfig,  SocialLoginModule } from 'angularx-social-login';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
-   override overrides = <any> {
+  override overrides = <any>{
     swipe: { direction: Hammer.DIRECTION_ALL },
   };
 }
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -108,7 +111,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     MstRtdComponent,
     TrxHistComponent,
 
-    
+
   ],
   imports: [
     BrowserModule,
@@ -118,17 +121,28 @@ export class MyHammerConfig extends HammerGestureConfig {
     HttpClientModule,
     FormsModule,
     MatBottomSheetModule,
-    ReactiveFormsModule,MatToolbarModule,
-    MatInputModule,MatTabsModule,MatListModule,MatIconModule,MatSelectModule,MatChipsModule,
-    MatSelectModule,MatButtonModule,MatFormFieldModule,MatCardModule,MatSidenavModule,
+    ReactiveFormsModule, MatToolbarModule,
+    MatInputModule, MatTabsModule, MatListModule, MatIconModule, MatSelectModule, MatChipsModule,
+    MatSelectModule, MatButtonModule, MatFormFieldModule, MatCardModule, MatSidenavModule,
     //  Angular4PaystackModule.forRoot('pk_test_c5bc80647b60c1bf05f3f6fdac32a99f82b598ce'),
     // mine Angular4PaystackModule.forRoot('pk_live_10dfaf3fd6d08ffef3247b28306e269ed3e220ce'),
     Angular4PaystackModule.forRoot('pk_live_26a3a092033f86576be06d25e494d0b1e24ef479'),
+   SocialLoginModule.initialize({
+    autoLogin: false,
+    providers: [
+      {
 
+        id: GoogleLoginProvider.PROVIDER_ID,
+        provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
+
+      }
+
+    ]
+  })
   ],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
-,
-  exports:[
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  ,
+  exports: [
     MatChipsModule,
     MatChip,
 
@@ -138,11 +152,32 @@ export class MyHammerConfig extends HammerGestureConfig {
       provide: HAMMER_GESTURE_CONFIG,
       useClass: MyHammerConfig,
     },
+    {
+
+      provide: 'SocialAuthServiceConfig',
+
+      useValue: {
+
+        autoLogin: false,
+
+        providers: [
+          {
+
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
+
+          }
+
+        ],
+
+      } as SocialAuthServiceConfig,
+
+    },
   ],
-  
+
   entryComponents: [
     btmSheet,
   ],
-    bootstrap: [AppComponent]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,16 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ZeetaService } from '../zeeta.service';
 
+import {
+
+  SocialAuthService,
+
+  GoogleLoginProvider,
+
+  SocialUser,
+
+} from 'angularx-social-login';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,9 +20,37 @@ import { ZeetaService } from '../zeeta.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private r: Router, private fb: FormBuilder, private s: ZeetaService) { }
-
+  constructor(private r: Router, private fb: FormBuilder, private s: ZeetaService, private socialAuthService:SocialAuthService) { }
+  socialUser!:SocialUser;
   ngOnInit(): void {
+    // if(localStorage.getItem('tutoUser')){
+    //   this.r.navigateByUrl('home')
+    // }
+ 
+
+    this.socialAuthService.authState.subscribe((user) => {
+
+      this.socialUser = user;
+
+      if (user) {
+
+        // this.isLoggedin = user != null;
+
+        this.s.register(this.socialUser).subscribe((r:any) => {
+          localStorage.setItem('tutoUser',JSON.stringify(r['user']))
+          this.r.navigateByUrl('home')
+        });
+
+      }
+
+    });
+  }
+
+  slx(){
+    console.log("kjdfj")
+   this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID).then(userData =>{
+      console.log(userData)
+    })
   }
   kil = this.fb.group({
     email: [null, Validators.required],
@@ -32,7 +70,6 @@ export class LoginComponent implements OnInit {
         else {
           this.s.ancerText = r['msg']
           this.r.navigateByUrl('announcer')
-          console.log(r)
         }
       })
   }
