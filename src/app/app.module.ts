@@ -66,7 +66,8 @@ import { CoinShopComponent } from './coin-shop/coin-shop.component';
 import { MstRtdComponent } from './mst-rtd/mst-rtd.component';
 import { btmSheeto } from './trending/btmsheet';
 import { TrxHistComponent } from './trx-hist/trx-hist.component';
-import { GoogleLoginProvider,  SocialAuthServiceConfig,  SocialLoginModule } from 'angularx-social-login';
+import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+// import { GoogleLoginProvider,  SocialAuthServiceConfig,  SocialLoginModule } from 'angularx-social-login';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
   override overrides = <any>{
@@ -127,18 +128,7 @@ export class MyHammerConfig extends HammerGestureConfig {
     //  Angular4PaystackModule.forRoot('pk_test_c5bc80647b60c1bf05f3f6fdac32a99f82b598ce'),
     // mine Angular4PaystackModule.forRoot('pk_live_10dfaf3fd6d08ffef3247b28306e269ed3e220ce'),
     Angular4PaystackModule.forRoot('pk_live_26a3a092033f86576be06d25e494d0b1e24ef479'),
-   SocialLoginModule.initialize({
-    autoLogin: false,
-    providers: [
-      {
-
-        id: GoogleLoginProvider.PROVIDER_ID,
-        provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
-
-      }
-
-    ]
-  })
+  
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
   ,
@@ -153,26 +143,41 @@ export class MyHammerConfig extends HammerGestureConfig {
       useClass: MyHammerConfig,
     },
     {
-
       provide: 'SocialAuthServiceConfig',
-
       useValue: {
-
         autoLogin: false,
-
         providers: [
           {
-
             id: GoogleLoginProvider.PROVIDER_ID,
             provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
-
-          }
-
+          },
         ],
-
+        onError: (err) => {
+          console.error(err);
+        },
       } as SocialAuthServiceConfig,
+    }
+    // {
 
-    },
+    //   provide: 'SocialAuthServiceConfig',
+
+    //   useValue: {
+
+    //     autoLogin: false,
+
+    //     providers: [
+    //       {
+
+    //         id: GoogleLoginProvider.PROVIDER_ID,
+    //         provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
+
+    //       }
+
+    //     ],
+
+    //   } as SocialAuthServiceConfig,
+
+    // },
   ],
 
   entryComponents: [
