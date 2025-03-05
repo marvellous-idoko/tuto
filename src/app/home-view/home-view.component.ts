@@ -39,7 +39,6 @@ export class HomeViewComponent implements OnInit {
     this.s.listbookys('bksforyou').
       subscribe((r: { [key: string]: any }) => {
         this.s.eng['bksForU']  = r
-        console.log(r)
         for (let index = 0; index < this.s.eng['bksForU'].length; index++) {
           this.s.getRes(this.s.eng['bksForU'][index]['author'], 'author', 'name')
             .subscribe((r: { [key: string]: any }) => this.s.eng['bksForU'][index]['authorNm'] = r['msg'])
@@ -96,6 +95,7 @@ export class HomeViewComponent implements OnInit {
     this.s.listbookys('crtReadng').
       subscribe((r: { [key: string]: any }) => {
         this.s.eng['bksCrtRdng'] = r
+        console.log(r)
         if(this.s.eng['bksCrtRdng'].length != 0){
           for (let index = 0; index < this.s.eng['bksCrtRdng'].length; index++) {
             this.s.getRes(this.s.eng['bksCrtRdng'][index]['author'], 'author', 'name')

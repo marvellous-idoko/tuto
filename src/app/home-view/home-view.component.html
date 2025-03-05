@@ -1,8 +1,11 @@
 <section style="    margin-bottom: 10vh;">
     <div>
-        <div *ngIf="s.eng['bksForU'].length !== 0" style="margin-bottom: 2em;">
+        <div class="flex scrl">
+            <app-trending-card [data]="book" *ngFor="let book of s.eng['bksTrnd'] "></app-trending-card>
+        </div>       
+         <div *ngIf="s.eng['bksForU'].length !== 0" style="margin-bottom: 2em;">
             <h2>Books For You</h2>
-            <hr>
+            
             <div class="flex scrl">
 
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksForU'] ">
@@ -48,7 +51,7 @@
         </div>
         <div *ngIf="s.eng['freeBooks'].length !== 0" style="margin-bottom: 2em;">
             <h2>Free Books</h2>
-            <hr>
+            
             <div class="flex scrl">
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['freeBooks'] ">
                     <figure class="flex" style="flex-direction:column;">
@@ -94,7 +97,7 @@
         </div>
         <div *ngIf="s.eng['bksTrnd'].length !== 0" style="margin-bottom: 2em;">
             <h2>Trending</h2>
-            <hr>
+            
             <div class="flex scrl">
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksTrnd'] ">
                     <figure class="flex" style="flex-direction:column;">
@@ -141,7 +144,7 @@
         
         <div *ngIf="s.eng['bksPop'].length !== 0" style="margin-bottom: 2em;">
             <h2>Popular</h2>
-            <hr>
+            
             <div class="flex scrl">
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksPop']">
                     <figure class="flex" style="flex-direction:column;">
@@ -186,7 +189,7 @@
         </div>
         <div *ngIf="s.eng['favAut'].length !== 0" style="margin-bottom: 2em;">
             <h2>Favourite Authors</h2>
-            <hr>
+            
             <div class="flex scrl">
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['favAut']">
                     <figure class="flex" style="flex-direction:column;">
@@ -232,7 +235,7 @@
         </div>
         <div *ngIf="s.eng['bksMstRtd'].length !== 0" style="margin-bottom: 2em;">
             <h2>Most Rated</h2>
-            <hr>
+            
             <div class="flex scrl">
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])" *ngFor="let book of s.eng['bksMstRtd']">
                     <figure class="flex" style="flex-direction:column;">
@@ -278,7 +281,7 @@
 
         <div *ngIf="s.eng['bksCrtRdng'].length !== 0" style="margin-bottom: 2em;">
             <h2>Currently Reading</h2>
-            <hr>
+            
             <div class="flex scrl">
                 <div class="sm-box flex curvCor" (click)="goto(book['bookId'])"
                     *ngFor="let book of s.eng['bksCrtRdng']">

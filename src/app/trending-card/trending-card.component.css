@@ -1,0 +1,61 @@
+figure.bookImg > div {
+  display: flex;
+  justify-content: space-between;
+}
+figure.bookImg {
+  height: 60px;
+  width: 200px;
+  background-image: linear-gradient(45deg, #dbaa4f, var(--primary));
+  border-radius: 10px 10px 0 0;
+  padding: 15px 15px;
+  color: white;
+  margin-bottom: 0 !important;
+  animation: hgij 20s infinite;
+}
+/* figure.lowerView > div{
+    display: flex;
+    justify-content: space-between;
+} */
+figure.lowerView > div h1 {
+  color: #333642;
+}
+figure.lowerView > div p {
+  margin: 0;
+
+  color: #c6c3c5;
+}
+
+figure.lowerView {
+  height: 70px;
+  width: 200px;
+  margin-top: 0 !important;
+  padding: 15px 15px;
+  background: linear-gradient(45deg, #ebe1e1, #f0ebeb);
+  border-radius: 0 0 10px 10px;
+}
+
+div.dk p {
+  padding: 5px;
+  background: #ffffffb3;
+  color: black;
+  border-radius: 5px;
+  line-height: 1;
+    height: fit-content;
+}
+@keyframes hgij {
+    0%{
+        background-position: top;
+    }
+    25%{
+        background-position: center;
+    }
+    50%{
+        background-position: bottom;
+    }
+    75%{
+        background-position: center;
+    }
+    100%{
+        background-position: top;
+    }
+}

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 @Component({
   selector: 'app-energy',
@@ -8,7 +8,7 @@ import { Router } from '@angular/router'
 })
 export class EnergyComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb:UntypedFormBuilder) { }
 
   ngOnInit(): void {
   }

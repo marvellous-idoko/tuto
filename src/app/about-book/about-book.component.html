@@ -65,22 +65,22 @@
                                 </div>
                             </div>
                             <div *ngIf="checkPrice(book['price'])">
-                                <b>Price</b>
+                                
                                 <div class="flex">
-                                    <p style="font-size: medium;">
+                                    <b style="font-size: medium;">
 
                                         {{book['price']}}
-                                    </p>
+                                    </b>
                                     <img src="./bj.png" height="20" width="20" alt="">{{book['coins']}}
                                 </div>
                             </div>
                             <div *ngIf="!checkPrice(book['price'])">
                                 <b style="color:green;">Free</b>
                             </div>
-                            <div><span>No. of Reads</span>
+                            <div><span><mat-icon>visibility</mat-icon></span>
                                 <h3 style="color: var(--primary);">{{book['noOfReads']}}</h3>
                             </div>
-                        </figcaption>
+                        </figcaption><mat-icon class="mat-18">ligature</mat-icon>
                         <!-- <button  (tap)="onTap($event)"mat-fab>I</button> -->
                     </figure>
                 </div>

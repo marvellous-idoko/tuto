@@ -18,7 +18,6 @@ export class AboutBookComponent implements OnInit {
    this.s.getBook(this.act.snapshot.params['id'])
    .subscribe(gre=>{
       this.book = gre
-      console.log(this.book)
       this.s.crrtBook = gre
       this.tr="url(" + this.book['bookArtSm'] + ")"
     this.s.currInterfaceBoook = gre

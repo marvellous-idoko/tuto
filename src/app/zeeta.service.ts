@@ -21,12 +21,12 @@ export class ZeetaService {
   currInterfaceBoook :any = {price: 20}
   crrtBook:any
   ancerText:string = 'hello'
-  user = JSON.parse(localStorage.getItem('tutoUser')!)
+  user =  JSON.parse(localStorage.getItem('tutoUser') || '{}') 
   eng : {[key:string]:any} = {}
 
   // let p = JSON.parse(localStorage.getItem('tutoUser'))
   kolkd(){
-    this.user = JSON.parse(localStorage.getItem('tutoUser')!)
+    this.user = JSON.parse(localStorage.getItem('tutoUser')!) 
   }
   jko(h:boolean){
     
@@ -93,7 +93,10 @@ export class ZeetaService {
     return this.Http.post(this.server + 'auth/login',data, { headers: this.headers }) 
   }
   sendNotifTokenToServer(){
-    this.Http.get(this.server + `notifToken?id=${this.user['account_no']}&token=${this.user['notificationToken']}`, { headers: this.headers })
+    this.kolkd()
+    console.log(this.user)
+    if(this.user['firebaseToken'] && this.user['firebaseToken'] != undefined && this.user['firebaseToken'] != 'undefined')
+    this.Http.get(this.server + `notifToken?id=${this.user['account_no']}&account_no=${this.user['account_no']}&token=${this.user['firebaseToken']}`, { headers: this.headers })
     .subscribe(r=>console.log(r))
   }
 

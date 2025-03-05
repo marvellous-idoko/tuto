@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { ZeetaService } from '../zeeta.service';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { FormBuilder, Validators } from '@angular/forms';
   })
   export class btmSheetf implements OnInit{
     constructor(private _bottomSheetRef: MatBottomSheetRef<btmSheetf> ,
-      private fb:FormBuilder,
+      private fb:UntypedFormBuilder,
       public s:ZeetaService){}
 
     openLink(event: MouseEvent): void {

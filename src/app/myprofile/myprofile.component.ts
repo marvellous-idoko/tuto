@@ -14,10 +14,14 @@ export class MyprofileComponent implements OnInit {
 user:{[key:string]:any}={'pop':"sw"}
   ngOnInit(): void {
     this.user = JSON.parse(localStorage.getItem('tutoUser')!)
+    this.imgSrc =  (this.user['photoUrl'])? this.user['photoUrl'] : './logo.jpg'
+    document.getElementsByClassName('avatar')[0].setAttribute('src',this.user['photoUrl'])
+    // console.log(this.user)
   }
 goto(s:string){
   this.r.navigateByUrl(s)
 }
+imgSrc = './logo.jpg'
   movback(){
     this.l.back()
   }

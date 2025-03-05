@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { ZeetaService } from '../zeeta.service';
 import { Location } from '@angular/common';
 
@@ -10,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class SearchComponent implements OnInit {
 
-  constructor(private fb:FormBuilder,private l:Location, private s:ZeetaService) { }
+  constructor(private fb:UntypedFormBuilder,private l:Location, private s:ZeetaService) { }
 
   ngOnInit(): void {
   

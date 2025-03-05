@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { UntypedFormBuilder } from '@angular/forms';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { ZeetaService } from '../zeeta.service';
 
@@ -12,7 +12,7 @@ import { ZeetaService } from '../zeeta.service';
   export class btmSheete implements OnInit{
     constructor(private _bottomSheetRef: MatBottomSheetRef<btmSheete>,
         public s:ZeetaService, 
-        private fb:FormBuilder){}
+        private fb:UntypedFormBuilder){}
 
     openLink(event: MouseEvent): void {
         this._bottomSheetRef.dismiss();

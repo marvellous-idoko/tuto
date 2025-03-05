@@ -1,39 +1,40 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ZeetaService } from '../zeeta.service';
+// import { GoogleLoginProvider, SocialAuthService, SocialUser } from '                                                                                       ';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
   selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
+  templateUrl: './login.component.html',                                                            
+  styleUrls: ['./login.component.css']                                                                                                                                                  })                                                                                                                                                                                                                              
 export class LoginComponent implements OnInit {
 
-  constructor(private r: Router, private fb: FormBuilder, private s: ZeetaService) { }
+  constructor(private r: Router, private fb: UntypedFormBuilder,
+    // private socialAuthService: SocialAuthService,
+    private tstr:ToastrService,                                                                                                               
+    
+    private s: ZeetaService) { }
   // socialUser!:SocialUser;
   ngOnInit(): void {
     if(localStorage.getItem('tutoUser')){
       this.r.navigateByUrl('home')
     }
- 
-
     // this.socialAuthService.authState.subscribe((user) => {
-
     //   this.socialUser = user;
-
     //   if (user) {
-
-    //     // this.isLoggedin = user != null;
-
     //     this.s.register(this.socialUser).subscribe((r:any) => {
-    //       localStorage.setItem('tutoUser',JSON.stringify(r['user']))
-    //       this.r.navigateByUrl('home')
+    //       if(r.code == 0){
+    //         localStorage.setItem('tutoUser',JSON.stringify(r['user']))
+    //         this.r.navigateByUrl('home')
+    //       }else if(r.code == 1){
+    //         localStorage.setItem('tutoUser',JSON.stringify(r['user']))
+    //         this.r.navigateByUrl('home')
+    //       }
     //     });
-
     //   }
-
     // });
   }
 
@@ -41,6 +42,10 @@ export class LoginComponent implements OnInit {
     console.log("kjdfj")
  
   }
+  
+  // signInWithGoogle(): void {
+  //   this.socialAuthService.signIn(GoogleLoginProvider.PROVIDER_ID);
+  // }
   kil = this.fb.group({
     email: [null, Validators.required],
     pwd: [null, Validators.required],
@@ -54,7 +59,7 @@ export class LoginComponent implements OnInit {
     if (r['code'] == 1) {
           localStorage.setItem('tutoUser',JSON.stringify(r['msg']))
           this.r.navigateByUrl('home')
-          alert('success')
+      this.tstr.success("Successfully Logged In")
         }
         else {
           this.s.ancerText = r['msg']

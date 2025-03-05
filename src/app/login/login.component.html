@@ -74,12 +74,17 @@
                             <button style="width:100%" mat-raised-button color="primary">Sign In</button>
                             <h3>Or</h3>
                         </form>
-                        <button (click)="slx()">hjdhd</button>
-                        <!-- <asl-google-signin-button type='icon' size='medium'></asl-google-signin-button> -->
-                        <a routerLink="../signup">
+                        <div class="flex">
 
-                            <button style="width:100%" mat-stroked-button color="accent">Get Started</button>
+                            <asl-google-signin-button type="standard" text="signin_with" ></asl-google-signin-button>
+                        </div>
+<div class="flex">
+    <span>Don't have an account?</span>&nbsp;
+                        <a routerLink="../signup" mat-button color="accent">
+
+                            Get Started
                         </a>
+                    </div>
 
                     </DIV>
                 </div>

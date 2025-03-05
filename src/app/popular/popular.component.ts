@@ -22,6 +22,7 @@ export class PopularComponent implements OnInit {
     this.contents = this.s.eng['bksPop']
     this.currCont = this.contents[this.counter]
     this.s.crrtBook = this.contents[this.counter]
+    console.log(this.s.crrtBook)
     this.addCss()
     this.tr = "url(" + this.currCont['bookArtSm'] + ")"
     this.autr = this.currCont['authorPhoto']

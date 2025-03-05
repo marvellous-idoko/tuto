@@ -33,6 +33,8 @@ import { FavAuthorComponent } from './fav-author/fav-author.component';
 import { CrntReadingComponent } from './crnt-reading/crnt-reading.component';
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import {MatSliderModule} from '@angular/material/slider';
+
 // @ts-ignore
 import { MatChipsModule, MatChip } from '@angular/material/chips';
 // @ts-ignore
@@ -66,7 +68,9 @@ import { CoinShopComponent } from './coin-shop/coin-shop.component';
 import { MstRtdComponent } from './mst-rtd/mst-rtd.component';
 import { btmSheeto } from './trending/btmsheet';
 import { TrxHistComponent } from './trx-hist/trx-hist.component';
-import { GoogleLoginProvider, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+// import { GoogleLoginProvider,SocialLoginModule, SocialAuthServiceConfig } from '@abacritt/angularx-social-login';
+import { TrendingCardComponent } from './trending-card/trending-card.component';
+import { ToastrModule } from 'ngx-toastr';
 // import { GoogleLoginProvider,  SocialAuthServiceConfig,  SocialLoginModule } from 'angularx-social-login';
 @Injectable()
 export class MyHammerConfig extends HammerGestureConfig {
@@ -76,113 +80,98 @@ export class MyHammerConfig extends HammerGestureConfig {
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PayoutComponent,
-    MydetailsComponent,
-    HomeComponent,
-    AirtimeComponent,
-    DataComponent,
-    EnergyComponent,
-    CableComponent,
-    NavComponent,
-    HomeViewComponent,
-    PopularComponent,
-    TrendingComponent,
-    GenresComponent,
-    FavAuthorComponent,
-    CrntReadingComponent,
-    btmSheet,
-    ReadBookComponent,
-    LoginComponent,
-    SignupComponent,
-    AnnouncerComponent,
-    MyprofileComponent,
-    SearchComponent,
-    AboutBookComponent,
-    SubscribeOptionsComponent,
-    LoaderComponent,
-    btmSheetf,
-    btmSheeto,
-    btmSheetq,
-    btmSheetw,
-    btmSheete,
-    BksforyouComponent,
-    CoinShopComponent,
-    MstRtdComponent,
-    TrxHistComponent,
-
-
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    HammerModule,
-    HttpClientModule,
-    FormsModule,
-    MatBottomSheetModule,
-    ReactiveFormsModule, MatToolbarModule,
-    MatInputModule, MatTabsModule, MatListModule, MatIconModule, MatSelectModule, MatChipsModule,
-    MatSelectModule, MatButtonModule, MatFormFieldModule, MatCardModule, MatSidenavModule,
-    //  Angular4PaystackModule.forRoot('pk_test_c5bc80647b60c1bf05f3f6fdac32a99f82b598ce'),
-    // mine Angular4PaystackModule.forRoot('pk_live_10dfaf3fd6d08ffef3247b28306e269ed3e220ce'),
-    Angular4PaystackModule.forRoot('pk_live_26a3a092033f86576be06d25e494d0b1e24ef479'),
-  
-  ],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
-  ,
-  exports: [
-    MatChipsModule,
-    MatChip,
-
-  ],
-  providers: [
-    {
-      provide: HAMMER_GESTURE_CONFIG,
-      useClass: MyHammerConfig,
-    },
-    {
-      provide: 'SocialAuthServiceConfig',
-      useValue: {
-        autoLogin: false,
-        providers: [
-          {
-            id: GoogleLoginProvider.PROVIDER_ID,
-            provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
-          },
-        ],
-        onError: (err) => {
-          console.error(err);
+    declarations: [
+        AppComponent,
+        PayoutComponent,
+        MydetailsComponent,
+        HomeComponent,
+        AirtimeComponent,
+        DataComponent,
+        EnergyComponent,
+        CableComponent,
+        NavComponent,
+        HomeViewComponent,
+        PopularComponent,
+        TrendingComponent,
+        GenresComponent,
+        FavAuthorComponent,
+        CrntReadingComponent,
+        btmSheet,
+        ReadBookComponent,
+        LoginComponent,
+        SignupComponent,
+        AnnouncerComponent,
+        MyprofileComponent,
+        SearchComponent,
+        AboutBookComponent,
+        SubscribeOptionsComponent,
+        LoaderComponent,
+        btmSheetf,
+        btmSheeto,
+        btmSheetq,
+        btmSheetw,
+        btmSheete,
+        BksforyouComponent,
+        CoinShopComponent,
+        MstRtdComponent,
+        TrxHistComponent,
+        TrendingCardComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        ToastrModule.forRoot(),
+        HammerModule,
+        HttpClientModule,
+        FormsModule,
+        MatBottomSheetModule,
+        ReactiveFormsModule, MatToolbarModule,
+        MatInputModule, MatTabsModule, MatListModule, MatIconModule, MatSelectModule, MatChipsModule,
+        MatSelectModule, MatButtonModule, MatFormFieldModule, MatCardModule, MatSidenavModule, MatSliderModule,
+        //  Angular4PaystackModule.forRoot('pk_test_c5bc80647b60c1bf05f3f6fdac32a99f82b598ce'),
+        // mine Angular4PaystackModule.forRoot('pk_live_10dfaf3fd6d08ffef3247b28306e269ed3e220ce'),
+        Angular4PaystackModule.forRoot('pk_live_26a3a092033f86576be06d25e494d0b1e24ef479'),
+        // SocialLoginModule,
+       ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+    exports: [
+        MatChipsModule,
+        MatChip,
+    ],
+    providers: [
+        {
+            provide: HAMMER_GESTURE_CONFIG,
+            useClass: MyHammerConfig,
         },
-      } as SocialAuthServiceConfig,
-    }
-    // {
-
-    //   provide: 'SocialAuthServiceConfig',
-
-    //   useValue: {
-
-    //     autoLogin: false,
-
-    //     providers: [
-    //       {
-
-    //         id: GoogleLoginProvider.PROVIDER_ID,
-    //         provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
-
-    //       }
-
-    //     ],
-
-    //   } as SocialAuthServiceConfig,
-
-    // },
-  ],
-
-  entryComponents: [
-    btmSheet,
-  ],
-  bootstrap: [AppComponent]
+        // {
+        //     provide: 'SocialAuthServiceConfig',
+        //     useValue: {
+        //         autoLogin: false,
+        //         providers: [
+        //             {
+        //                 id: GoogleLoginProvider.PROVIDER_ID,
+        //                 provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com',{oneTapEnabled:true}),
+        //             },
+        //         ],
+        //         onError: (err) => {
+        //             console.error(err);
+        //         },
+        //     } as SocialAuthServiceConfig,
+        // }
+        // {
+        //   provide: 'SocialAuthServiceConfig',
+        //   useValue: {
+        //     autoLogin: false,
+        //     providers: [
+        //       {
+        //         id: GoogleLoginProvider.PROVIDER_ID,
+        //         provider: new GoogleLoginProvider('1082541213211-ll9p80olegq5dnltbncqhi8eqc64op1b.apps.googleusercontent.com'),
+        //       }
+        //     ],
+        //   } as SocialAuthServiceConfig,
+        // },
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,8 +1,8 @@
 <section class="bg" style="background-image:url(./toyoBG.png)">
     <!-- <mat-toolbar class="pad" color="primary"><h3 >Tuto</h3></mat-toolbar> -->
 <div class="flex" style="height: inherit;">
-    <div class="pad flex curvCor" style="padding: 1em;">
-        <form [formGroup]="kil" class="flex" style="flex-direction: column;" (ngSubmit)="register()">
+    <div class="pad flex curvCor" style="padding: 1em;flex-direction: column; gap: 20px;">
+        <form [formGroup]="kil" class="flex" style="flex-direction: column;">
             <h1 style="text-align: center;" id="sign">Sign Up</h1>
             <div id="el1" class="flex" style="flex-direction: column">  
                 <mat-form-field>
@@ -14,11 +14,11 @@
                     <input matInput formControlName="email" type="email">
                 </mat-form-field>
 
-                <mat-form-field>
+                <!-- <mat-form-field>
 
                     <mat-label>Phone No.</mat-label>
                     <input matInput formControlName="contact" type="tel">
-                </mat-form-field>
+                </mat-form-field> -->
                 <mat-form-field>
 
                     <mat-label>Password</mat-label>
@@ -30,28 +30,45 @@
                 </mat-form-field>
                 <div class="flex" style="width:100%;place-content: space-between;text-align: center;">
 
-                    <a routerLink="../login">
-                        <div style="width:100%" class="btn" mat-icon-button color="primary">Sign in</div>
-                    </a>
-                    <mat-icon mat-icon-button class="btn" (click)="show()" >
-                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+
+                    <a style="width: 100%;" color="primary" mat-flat-button (click)="show()" >
+                        <span>Next</span>
+                        <!-- <mat-icon class="mat-18"> -->
+                            <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
-                      </svg>
-                    </mat-icon>
+                      </svg> -->
+                        <!-- navigate_next -->
+                      <!-- </mat-icon> -->
+                    </a>
                 </div>
+            <div class="flex" style="flex-direction: column;margin-top: 15px;">
+                <asl-google-signin-button type="standard" text="signup_with" ></asl-google-signin-button>
+               <span>
+                Already have an account? 
+                <a routerLink="../login" mat-button color="accent">
+                    <span >Sign in</span>
+                </a>
+               </span>
+    
             </div>
+        </div>
+            </form>
             <div id="el" class="flex" style="flex-direction: column">
-                <mat-selection-list style="width: 100%;">
-                    <h3>Select your favourite genres</h3>
-                    <mat-list-option (click)="addGenres(genre)" *ngFor="let genre of genres">
-                        {{genre}}
-                    </mat-list-option>
-                </mat-selection-list>
-                <button style="width:100%" mat-raised-button color="primary">Sign up</button>
-            </div>
+                    <form [formGroup]="kil" (ngSubmit)="register()">
+                    <mat-selection-list style="width: 100%;">
+                        <h3>Select your favourite genres</h3>
+                        <mat-list-option (click)="addGenres(genre)" *ngFor="let genre of genres">
+                            {{genre}}
+                        </mat-list-option>
+                    </mat-selection-list>
+                    <button style="width:100%" mat-raised-button color="primary">Sign up</button>
+                </form>
+                </div>
+            
 
-        </form>
-
+        
+        
+        
     </div>
 </div>
 </section>

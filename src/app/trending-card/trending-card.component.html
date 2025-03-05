@@ -1,0 +1,16 @@
+<div routerLink="/aboutBook/{{data.bookId}}">
+  <div>
+    <figure style="background-image: url({{data.bookArtSm}});" class="bg bookImg">
+      <div class="dk">
+        <p class="star">{{data.noOfStars}}</p>
+        <p style="color: black;">{{data.noOfReads | number}} readers</p>
+      </div>
+    </figure>
+  </div>
+  <figure class="lowerView">
+    <div>
+      <p>{{data.authorNm}}</p>
+      <h1 class="wrdBrk">{{data.title}}</h1>
+    </div>
+</figure>
+</div>
